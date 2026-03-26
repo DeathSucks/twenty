@@ -109,7 +109,7 @@ const StyledAppDescription = styled.div`
 
 const StyledContentContainer = styled.div`
   display: flex;
-  gap: ${themeCssVariables.spacing[8]};
+  gap: ${themeCssVariables.spacing[4]};
 `;
 
 const StyledMainContent = styled.div`
@@ -120,7 +120,7 @@ const StyledMainContent = styled.div`
 
 const StyledSidebar = styled.div`
   flex-shrink: 0;
-  width: 180px;
+  width: 140px;
 `;
 
 const StyledSidebarSection = styled.div`
@@ -189,7 +189,7 @@ const StyledScreenshotsContainer = styled.div`
   display: flex;
   height: 300px;
   justify-content: center;
-  margin-bottom: ${themeCssVariables.spacing[4]};
+  margin-bottom: ${themeCssVariables.spacing[2]};
   overflow: hidden;
 `;
 
@@ -234,18 +234,12 @@ const StyledThumbnailImage = styled.img`
 
 const StyledSectionTitle = styled.h2`
   color: ${themeCssVariables.font.color.primary};
-  font-size: ${themeCssVariables.font.size.lg};
+  font-size: ${themeCssVariables.font.size.xl};
   font-weight: ${themeCssVariables.font.weight.semiBold};
   margin: 0 0 ${themeCssVariables.spacing[3]} 0;
 `;
 
-const StyledAboutText = styled.p`
-  color: ${themeCssVariables.font.color.secondary};
-  font-size: ${themeCssVariables.font.size.md};
-  line-height: 1.6;
-  margin: 0 0 ${themeCssVariables.spacing[6]} 0;
-  white-space: pre-line;
-`;
+const StyledAboutContainer = styled.div``;
 
 const StyledProvidersList = styled.ul`
   color: ${themeCssVariables.font.color.secondary};
@@ -406,7 +400,7 @@ export const SettingsAvailableApplicationDetails = () => {
         return (
           <>
             {hasScreenshots && (
-              <>
+              <StyledAboutContainer>
                 <StyledScreenshotsContainer>
                   <StyledScreenshotImage
                     src={screenshots[selectedScreenshotIndex]}
@@ -427,7 +421,7 @@ export const SettingsAvailableApplicationDetails = () => {
                     </StyledThumbnail>
                   ))}
                 </StyledScreenshotThumbnails>
-              </>
+              </StyledAboutContainer>
             )}
 
             <StyledContentContainer>
